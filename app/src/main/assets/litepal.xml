@@ -1,0 +1,8 @@
+<litepal>
+    <dbname value='nini_weather' />
+    <version value='1' />
+    <list>
+        <mapping class="cn.edu.jenny.niniweather.nini_db.Province" />
+        <mapping class="cn.edu.jenny.niniweather.nini_db.City" />
+    </list>
+</litepal>
