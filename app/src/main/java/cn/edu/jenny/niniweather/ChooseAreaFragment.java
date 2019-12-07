@@ -72,19 +72,24 @@ public class ChooseAreaFragment extends Fragment {
                 if(currentLevel==LEVEL_PROVINCE){
                     selectedProvince=provinceList.get(position);
                     queryCities();
-                }else if(currentLevel==LEVEL_CITY){
-                    selectedCity=cityList.get(position);
+                }//else if(currentLevel==LEVEL_CITY){
+                    //selectedCity=cityList.get(position);
 
-                }
+               // }
             }
         });
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+           public void onClick(View v) {
                 if(currentLevel==LEVEL_CITY){
                     queryProvinces();
                 }
             }
+          /*public void onClick(View v){
+              if(currentLevel!=LEVEL_CITY){
+                  queryCities();
+              }else queryProvinces();
+            }*/
         });
         queryProvinces();
     }
@@ -128,7 +133,7 @@ public class ChooseAreaFragment extends Fragment {
             currentLevel=LEVEL_CITY;
         }else{
             int provinceCode=selectedProvince.getProvinceCode();
-            String address="https://guolin.tech/api/china/"+provinceCode;
+            String address="http://guolin.tech/api/china/"+provinceCode;
             queryFromServer(address,"city");
         }
     }
